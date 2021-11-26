@@ -1,6 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -14,21 +18,37 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <h1 className="main-heading">
+        <Link to="/">{title}</Link>
+      </h1>
     )
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+    <div>
+      <div className='header'>
+        <header className="global-header">{header}</header>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/blog'>Blog</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <main>{children}</main>
+        <footer>
+          <div>© {new Date().getFullYear()} Made with <FontAwesomeIcon icon={faHeart} /> by Yummy Apps</div>
+          <div>Thanks to <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a> for the template!!</div>
+        </footer>
+      </div>
     </div>
   )
 }

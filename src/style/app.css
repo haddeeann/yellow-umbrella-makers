@@ -1,0 +1,60 @@
+.header {
+    background-color: #191E5D;
+    padding: 15px;
+    text-align: right;
+}
+.header ul li {
+    display: inline-block;
+    padding-right: 15px;
+}
+/* todo: remove the basic inserted styles and replace them with handcrafted crap
+in the meanwhile, this makes things light.
+*/
+.header h1 a, .header a {
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.header h1 a:hover, .header a:hover {
+    color: #B2CDFF;
+    text-decoration: none;
+}
+
+.section-card {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    border: 2px solid rgba(34,36,38,.15);
+    box-shadow: 0 2px 25px 0 rgb(34 36 38 / 5%) inset;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-card h4 {
+    /* changes the top default margin on an h4 to match the bottom */
+    margin-top: 24px; 
+}
+
+.section-card div:not(:last-child) {
+    border-bottom: 1px solid rgb(34 36 38 / 5%);
+    padding-bottom: 15px;
+}
+
+.section {
+    background-color: #B2CDFF;
+    padding: 25px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border: 2px solid #99B4FF;
+    box-shadow: 0 2px 25px 0 rgb(34 36 38 / 5%) inset;
+    text-align: center;
+}
+
+/* 
+
+E8E5EB
+79B3D5
+2A469A
+4C67B3
+191E5D
+*/

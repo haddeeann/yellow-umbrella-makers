@@ -1,17 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Yellow Umbrella Makers`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Patricia Green`,
+      summary: `Who lives and travels around the U.S. and makes cool and interesting things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A website about a group of makers and software engineers. Making the world better one button type at a time.`,
+    siteUrl: `https://yummyapps.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `yummyapps`,
     },
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

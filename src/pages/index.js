@@ -1,88 +1,77 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import '../style/app.css'
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faSun, faBell, faSnowflake, faAirFreshener, faAtom, faCode } from '@fortawesome/free-solid-svg-icons'
 
-const BlogIndex = ({ data, location }) => {
+const HomePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      <Seo title="Home Page" />
+      {/* section on what we do in topic */}
+      <div className='section'>
+        <h3>What We Do</h3>
+        <h4>Design Concepts for apps, websites, and new technologies.</h4> 
+        <h4>Step through the process of development with various products. Coding. Testing. And finally, launch.</h4>
+        <h4>Complete data analysis for helping businesses determine their best solutions and paths.</h4>
+      </div>
+      {/* section about what we do in categories */}
+      <div className='section-card'>
+        <div>
+          <h3>Game Development</h3>
+          <FontAwesomeIcon icon={faCoffee} size='5x' />
+          <h4>Play is important</h4>
+        </div>
+        <div>
+          <h3>Developing Apps</h3>
+          <FontAwesomeIcon icon={faAtom} size='5x' />
+          <h4>Making things that are useful</h4>
+        </div>
+        <div>
+          <h3>Data Research</h3>
+          <FontAwesomeIcon icon={faCode} size='5x' />
+          <h4>Data that drives good decisions</h4>
+        </div>
+      </div>
+      {/* section about our development process */}
+      <div className='section'>
+        <div>
+          <h3>Research</h3>
+          <FontAwesomeIcon icon={faAirFreshener} size='5x' />
+          <p>A great product involves research and problem solving.</p>
+        </div>
+        <div>
+          <h3>Design</h3>
+          <FontAwesomeIcon icon={faBell} size='5x' />
+          <p>Making things that people WANT to use begins with good design.</p>
+        </div>
+        <div>
+          <h3>Develop</h3>
+          <FontAwesomeIcon icon={faSun} size='5x' />
+          <p>A great product is made as simply as possible with room for growth.</p>
+        </div>
+        <div>
+          <h3>Market</h3>
+          <FontAwesomeIcon icon={faSnowflake} size='5x' />
+          <p>For a product to be useful people have to know about it.</p>
+        </div>
+      </div>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default HomePage
 
-export const pageQuery = graphql`
+export const homePageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
       }
     }
   }
