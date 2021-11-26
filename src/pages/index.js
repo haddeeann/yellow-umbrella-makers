@@ -12,7 +12,7 @@ const HomePage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Home Page" />
+      <Seo title="Home" />
       {/* section on what we do in topic */}
       <div className='section'>
         <h3>What We Do</h3>
