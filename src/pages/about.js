@@ -1,64 +1,24 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+        <Seo title="All posts" />
+        <div className='section-card'>
+            <h2>Why Does Yummy Apps Exist?</h2>
+            <p>Our goal is to create useful things and give people a space to create.</p>
+            <h2>How Does Yummy Apps Operate?</h2>
+            <p>Every product exists for one of two reasons: one of us went to look for it and couldn't find it or we thought it would be fun to make. Many of the things we create start with an idea.. 'You know what would be useful?'. Once we go to look for it if we can't find it and it seems like fun to make.. boom! There we go.</p>
+            <h2>Our Philosphy</h2>
+            <p>Start where you are, use what you have and do what you can.</p>
+            <p>We believe that great things can start small as long as the people who make them work hard. It's more important to make something and get feedback than to sit in idea land and THINK about what people need. The trick is to improve continuously and grow organically. With that in mind we respect that sometimes projects, goals, and ideas change. That gives us the ability to remain agile and to adapt.</p>
+        </div>
     </Layout>
   )
 }
@@ -70,19 +30,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
       }
     }
   }

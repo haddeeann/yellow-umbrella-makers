@@ -3,6 +3,9 @@
     padding: 15px;
     text-align: right;
 }
+.header h1 {
+    display: inline-block;
+}
 .header ul li {
     display: inline-block;
     padding-right: 15px;
