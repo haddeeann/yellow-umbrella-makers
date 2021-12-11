@@ -23,7 +23,7 @@ in the meanwhile, this makes things light.
 }
 
 .header h1 a:hover, .header a:hover {
-    color: rgba(178, 205, 255, .50);
+    color: #f7f7f7;
     text-decoration: none;
 }
 
@@ -48,11 +48,12 @@ in the meanwhile, this makes things light.
 }
 
 .section {
-    background-color: rgba(178, 205, 255, .70);
+    background-color: rgba(178, 205, 255, .60);
     padding: 25px;
     margin-bottom: 48px;
     padding-bottom: 48px;
     border: 2px solid rgba(153, 180, 255, .5);
+    border-radius: 2px;
     box-shadow: 0 2px 25px 0 rgb(34 36 38 / 5%) inset;
     text-align: center;
 }
