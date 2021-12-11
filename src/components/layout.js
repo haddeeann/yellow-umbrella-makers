@@ -9,21 +9,6 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  }
 
   return (
     <div>
@@ -33,20 +18,24 @@ const Layout = ({ location, title, children }) => {
             alt="Yellow Umbrella Makers Logo"
             src="../images/umbrellaLogoSMALL.png"
           />
-          {header}
-          <nav>
-            <ul>
-              <li>
-                <Link to='/'>Home</Link>
-              </li>
-              <li>
-                <Link to='/blog'>Blog</Link>
-              </li>
-              <li>
-                <Link to='/about'>About</Link>
-              </li>
-            </ul>
-          </nav>
+          <div className='heading'>
+            <h1 className="main-heading">
+              <Link to="/">{title}</Link>
+            </h1>
+            <nav>
+              <ul>
+                <li>
+                  <Link to='/'>Home</Link>
+                </li>
+                <li>
+                  <Link to='/blog'>Blog</Link>
+                </li>
+                <li>
+                  <Link to='/about'>About</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </header>
       </div>
       <div className="global-wrapper" data-is-root-path={isRootPath}>

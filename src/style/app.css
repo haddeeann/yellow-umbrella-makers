@@ -1,7 +1,11 @@
 .header {
-    background-color: #191E5D;
+    background-color: rgba(25, 30, 93, .50);
     padding: 15px;
     text-align: right;
+}
+.heading {
+    float: right;
+    padding-left: 15px;
 }
 .header h1 {
     display: inline-block;
@@ -19,7 +23,7 @@ in the meanwhile, this makes things light.
 }
 
 .header h1 a:hover, .header a:hover {
-    color: #B2CDFF;
+    color: rgba(178, 205, 255, .50);
     text-decoration: none;
 }
 
@@ -44,11 +48,11 @@ in the meanwhile, this makes things light.
 }
 
 .section {
-    background-color: #B2CDFF;
+    background-color: rgba(178, 205, 255, .70);
     padding: 25px;
     margin-bottom: 48px;
     padding-bottom: 48px;
-    border: 2px solid #99B4FF;
+    border: 2px solid rgba(153, 180, 255, .5);
     box-shadow: 0 2px 25px 0 rgb(34 36 38 / 5%) inset;
     text-align: center;
 }
