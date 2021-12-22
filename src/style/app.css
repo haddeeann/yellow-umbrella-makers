@@ -1,32 +1,6 @@
-.header {
-    background-color: rgba(25, 30, 93, .50);
-    padding: 15px;
-    text-align: right;
+body {
+    font-family: franklin-gothic-urw-cond,helvetica neue,helvetica,arial,sans-serif;
 }
-.heading {
-    float: right;
-    padding-left: 15px;
-}
-.header h1 {
-    display: inline-block;
-}
-.header ul li {
-    display: inline-block;
-    padding-right: 15px;
-}
-/* todo: remove the basic inserted styles and replace them with handcrafted crap
-in the meanwhile, this makes things light.
-*/
-.header h1 a, .header a {
-    color: #f7f7f7;
-    text-decoration: none;
-}
-
-.header h1 a:hover, .header a:hover {
-    color: #f7f7f7;
-    text-decoration: none;
-}
-
 .section-card {
     background-color: #f7f7f7;
     border-radius: 5px;
