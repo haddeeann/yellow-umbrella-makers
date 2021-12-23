@@ -30,3 +30,8 @@ header h1 a {
     background-size: cover;
     background-position: left 75%;
 }
+
+main {
+    background-color: orange;
+    padding: 20px;
+}

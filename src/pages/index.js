@@ -14,14 +14,14 @@ const HomePage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Home" />
       {/* section on what we do in topic */}
-      <div>
+      <div className='section'>
         <h3>What We Do</h3>
         <p>Design Concepts for apps, websites, and new technologies.</p> 
         <p>Step through the process of development with various products. Coding. Testing. And finally, launch.</p>
         <p>Complete data analysis for helping businesses determine their best solutions and paths.</p>
       </div>
       {/* section about what we do in categories */}
-      <div className='section-card'>
+      <div className='section cards'>
         <div>
           <h3>Game Development</h3>
           <FontAwesomeIcon icon={faCoffee} size='5x' />
@@ -39,7 +39,7 @@ const HomePage = ({ data, location }) => {
         </div>
       </div>
       {/* section about our development process */}
-      <div className='section'>
+      <div className='section cards'>
         <div>
           <h3>Research</h3>
           <FontAwesomeIcon icon={faAirFreshener} size='5x' />

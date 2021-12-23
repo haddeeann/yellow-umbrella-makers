@@ -9,49 +9,26 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
   let header = ''
 
-  if (isRootPath) {
-    header = (
-      <header className='clouds' data-is-root-path={isRootPath}>
-        <h1>
-            <Link to="/">{title}</Link>
-        </h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/blog'>Blog</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    )
-  } else {
-    header = (
-      <header className='short-header' data-is-root-path={isRootPath}>
-        <h1>
-            <Link to="/">{title}</Link>
-        </h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/blog'>Blog</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    )
-  }
+  header = (
+    <header className={isRootPath ? 'clouds' : 'short-header'} data-is-root-path={isRootPath}>
+      <h1>
+          <Link to="/">{title}</Link>
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/blog'>Blog</Link>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  )
   return (
     <div>
       <div>{header}</div>

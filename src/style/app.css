@@ -3,11 +3,19 @@ body {
     background-color: #f7f7f7;
 }
 
-/* 
+.section {
+    background-color: purple;
+    padding: 15px;
+    margin-bottom: 25px;
+}
 
-E8E5EB
-79B3D5
-2A469A
-4C67B3
-191E5D
-*/
+.cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards > div {
+    background-color: lavender;
+    padding: 15px;
+    text-align: center;
+}
