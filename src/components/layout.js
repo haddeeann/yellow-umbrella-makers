@@ -35,7 +35,7 @@ const Layout = ({ location, title, children }) => {
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <main>{children}</main>
         <footer>
-          <div>© {new Date().getFullYear()} Made with <FontAwesomeIcon icon={faHeart} /> by Yummy Apps</div>
+          <div>© {new Date().getFullYear()} Made with <FontAwesomeIcon icon={faHeart} /> by Yummy Apps. </div>
           <div>Thanks to <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a> for the template!!</div>
         </footer>
       </div>
