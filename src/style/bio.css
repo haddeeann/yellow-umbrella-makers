@@ -1,0 +1,16 @@
+.bio {
+    padding: 15px;
+    background: linear-gradient(to bottom, #E69F6C 10%, #FFE9C4 30%, white 45%, #f7f7f7 65%);
+}
+
+.bio a {
+    text-decoration: none;
+    color: #66d9ff;
+}
+
+ /* #B39581 */
+ /* #E69F6C */
+ /* #D1F1FF */
+ /* #B3A081 */
+ /*  */
+ /* #FFE9C4 */

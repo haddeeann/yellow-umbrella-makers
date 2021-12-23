@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import '../style/bio.css'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -31,21 +32,26 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.jpeg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-        </p>
-      )}
+      <a href='https://haddeeann.github.io/patricia.portfolio/' target='_blank'>
+        <StaticImage
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/profile-pic.jpeg"
+          width={100}
+          height={105}
+          quality={95}
+          alt="Patricia Profile Pic"
+        />
+        {author?.name && (
+          <div>
+            <h4><strong>{author.name}</strong></h4>
+            <p>
+              Founder and general trouble maker. One who insists against all odds to be, of all things. <strong>Interesting</strong>.
+              {` `}
+            </p>
+          </div>
+        )}
+      </a>
     </div>
   )
 }

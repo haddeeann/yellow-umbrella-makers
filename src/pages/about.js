@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Bio from "../components/bio"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -18,6 +19,9 @@ const About = ({ data, location }) => {
             <h2>Our Philosphy</h2>
             <p>Start where you are, use what you have and do what you can.</p>
             <p>We believe that great things can start small as long as the people who make them work hard. It's more important to make something and get feedback than to sit in idea land and THINK about what people need. The trick is to improve continuously and grow organically. With that in mind we respect that sometimes projects, goals, and ideas change. That gives us the ability to remain agile and to adapt.</p>
+        </div>
+        <div>
+        <Bio />
         </div>
     </Layout>
   )

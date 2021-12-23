@@ -4,7 +4,6 @@ body {
 }
 
 .section {
-    background-color: purple;
     padding: 15px;
     margin-bottom: 25px;
 }
@@ -12,10 +11,35 @@ body {
 .cards {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+    .section {
+        text-align: center;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.section h3 {
+    padding-bottom: 15px;
 }
 
 .cards > div {
-    background-color: lavender;
-    padding: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
     text-align: center;
+    width: 200px;
+    min-height: 265px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+hr {
+    margin-top: 55px;
+    margin-bottom: 25px;
 }

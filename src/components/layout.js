@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
   let header = ''
 
   header = (
-    <header className={isRootPath ? 'clouds' : 'short-header'} data-is-root-path={isRootPath}>
+    <header className={isRootPath ? 'page-header clouds' : 'page-header short-header'} data-is-root-path={isRootPath}>
       <h1>
           <Link to="/">{title}</Link>
       </h1>
