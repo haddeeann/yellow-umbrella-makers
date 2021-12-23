@@ -10,7 +10,7 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
         <Seo title="About" />
-        <div className='section-card'>
+        <div>
             <h2>Why Does Yummy Apps Exist?</h2>
             <p>Our goal is to create useful things and give people a space to create.</p>
             <h2>How Does Yummy Apps Operate?</h2>

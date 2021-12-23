@@ -7,12 +7,13 @@ import '../style/layout.css'
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-
+  console.log(isRootPath);
   return (
     <div>
-      hello... nurse?
-      <div className='clouds'>clouds</div>
-      <header>
+      <div data-is-root-path={isRootPath}>
+        hello nurse
+      </div>
+      <header className='clouds' data-is-root-path={isRootPath}>
         <h1>
             <Link to="/">{title}</Link>
         </h1>

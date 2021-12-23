@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-background-image`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-image`,
     {
