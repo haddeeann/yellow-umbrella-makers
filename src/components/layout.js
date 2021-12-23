@@ -7,12 +7,10 @@ import '../style/layout.css'
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  console.log(isRootPath);
-  return (
-    <div>
-      <div data-is-root-path={isRootPath}>
-        hello nurse
-      </div>
+  let header = ''
+
+  if (isRootPath) {
+    header = (
       <header className='clouds' data-is-root-path={isRootPath}>
         <h1>
             <Link to="/">{title}</Link>
@@ -31,6 +29,32 @@ const Layout = ({ location, title, children }) => {
           </ul>
         </nav>
       </header>
+    )
+  } else {
+    header = (
+      <header className='short-header' data-is-root-path={isRootPath}>
+        <h1>
+            <Link to="/">{title}</Link>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/blog'>Blog</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    )
+  }
+  return (
+    <div>
+      <div>{header}</div>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <main>{children}</main>
         <footer>
