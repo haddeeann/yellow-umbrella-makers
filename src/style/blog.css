@@ -1,0 +1,18 @@
+ /* #B39581 */
+ /* #E69F6C */
+ /* #D1F1FF */
+ /* #B3A081 */
+ /*  */
+ /* #FFE9C4 */
+ .blogPosts {
+    list-style-type: none;
+}
+
+.blogPosts li {
+    padding-top: 15px;
+}
+
+.blogPosts hr {
+    border: 1px solid #E69F6C;
+    display: hidden;
+}

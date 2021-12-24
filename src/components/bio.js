@@ -32,7 +32,7 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <a href='https://haddeeann.github.io/patricia.portfolio/' target='_blank'>
+      <a href='https://hellonurse.io/' target='_blank' rel='noreferrer'>
         <StaticImage
           layout="fixed"
           formats={["auto", "webp", "avif"]}

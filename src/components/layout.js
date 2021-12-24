@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +20,7 @@ const Layout = ({ location, title, children }) => {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='/blog'>Blog</Link>
+            <Link to='/blog'>TechTalk</Link>
           </li>
           <li>
             <Link to='/about'>About</Link>

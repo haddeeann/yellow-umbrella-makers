@@ -1,6 +1,6 @@
 ---
 title: CSS Layouts Simple Explanation
-date: "2015-05-06T23:46:37.121Z"
+date: "2021-10-06"
 ---
 
 If you're a front end developer CSS layouts are at the core of the work that you do. However from experienced to novice web developers the way that these work can be a mystery.
