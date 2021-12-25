@@ -1,13 +1,21 @@
 ---
-title: CSS Layouts Simple Explanation
+title: CSS Styles Positioning Basics
 date: "2021-10-06"
 ---
 
-If you're a front end developer CSS layouts are at the core of the work that you do. However from experienced to novice web developers the way that these work can be a mystery.
+With CSS, getting the layout right is a basic tenet. A great place to start is by understanding what the position value means and how it arranges the elements on a page. 
 
-Let's break it down into simple ideas and core concepts. For CSS there exists a basic five options for the position element. Static, fixed, absolute, relative and inherit.
+To start with, there are five basic options for the positon element. Here they are:
 
-Let's start with static. All block level element start out with a default position element of static. That means for a web page filled with div's and p's that it will flow in a 'normal' direction that would resemble a word document.
+1. Static
+2. Fixed
+3. Absolute
+4. Relative
+5. Inherit
+
+## Static
+
+All block level element on a web page are by default, statically positioned. 
 
 Statically positioned elements can't be moved around with attributes like top, bottom, left or right. But fixed, absolute, and relative positioned elements can all be moved around with those attributes. So what is the difference between those three?
 
