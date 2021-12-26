@@ -15,24 +15,59 @@ To start with, there are five basic options for the positon element. Here they a
 
 ## Static
 
-All block level element on a web page are by default, statically positioned. 
+All block level element on a web page are static positioned by default. Statically positioned elements flow in a way that is similar to how documents flow. The elements fill in the space at the top and as elements are added they flow down the screen. The div, article, and p elements are great examples of this. They take up the full width of the page and only the height needed. And as each of them are added they flow down the page in a consistent manner.
 
-Statically positioned elements can't be moved around with attributes like top, bottom, left or right. But fixed, absolute, and relative positioned elements can all be moved around with those attributes. So what is the difference between those three?
+<iframe height="300" style="width: 100%;" scrolling="no" title="CSS Demo: Static block elements" src="https://codepen.io/pattee/embed/jOGapBM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/pattee/pen/jOGapBM">
+  CSS Demo: Static block elements</a> by Pattee Green (<a href="https://codepen.io/pattee">@pattee</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-Let's start with fixed positioned elements. When an element is given the fixed position, then it no longer fills the normal flow of the document and instead is 'positioned' according to the root element or body tag of the html document.
+Styles in CSS don't have the capability to move these elements around. A statically positioned element can't effectively apply any of the attributes like left, bottom, top, or right. If a left: 150px styles is applied to a static element it just sits there. Statically positioned element provide the 'normal document' control that is default.
 
-If you were to give the fixed position element a top or a bottom attribute, it would then be oriented that many pixels from the top of the document or the bottom of the document.
+## Relative
 
-Compare that to the absolute positioned element. Although the absolute positioned element is also moved around by the top, bottom, left, and right attributes, it is oriented according to the nearest parent element that has a relative position. So, the first parent element that has a position of relative provides the container that the absolutely positioned element will coordinate to.
+Relatively positioned elements provide a way for CSS to move the element around on the page. When CSS styles of left, right, top, or bottom are applied the element then adds that amount of space to move the element from where it would have been originally positioned. They are _relatively_ positioned from their original place in the document flow.
 
-When top, left, bottom or right is applied to an absolutely positioned element, that means top, left, bottom or right in relation to the nearest parent element that has a position of relative. It also is removed from the normal document flow. That means that any div or tag surrounding the absolutely positioned element now acts as though the absolutely positioned element doesn't exist in the document flow.
+<iframe height="300" style="width: 100%;" scrolling="no" title="CSS Demo: Relatively positioned elements" src="https://codepen.io/pattee/embed/ExwbpvE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/pattee/pen/ExwbpvE">
+  CSS Demo: Relatively positioned elements</a> by Pattee Green (<a href="https://codepen.io/pattee">@pattee</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-The absolutely positioned element no longer 'takes up space'.
+## Fixed 
 
-This position might be the hardest to grok right away. And it's the one that can get the most confusing when found in the wild. And that is because with deeply nested elements you might be hunting for a while for the nearest parent element that has a relative position.
+Fixed elements are positioned relative to the document body or the screen itself and not to the parent element and not to their original document positioning. Fixed elements can be positioned with the left, top, bottom, or right styles. But when the browser scrolls or moves they element will stay in place while everything else around it moves. 
 
-So this goes hand in hand with talking about the relatively positioned element. The relatively positioned element can be moved according to the top, bottom, left and right attributes. The relatively positioned element moves in those directions from where it would have been displayed originally on the document.
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/pattee/embed/wvrPxrK?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/pattee/pen/wvrPxrK">
+  Untitled</a> by Pattee Green (<a href="https://codepen.io/pattee">@pattee</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-And the relatively positioned element provides a context for the children if they decide to be absolutely positioned. (UhUm.. I mean if the developer decides the element should be absolutely positioned.). But while the relatively positioned elements isn't outside of the normal document flow, moving it around doesn't directly affect any of the children element. 
+## Absolute
 
-For example, if you move a relatively positioned element 15px to the left, it won't cause any of the div's following that element to be moved. They all remain however they were before the move.
+Absolutely positioned element are positioned relative to the nearest _relatively positioned_ parent element. That's an imporant point. The absolutely postioned element uses the nearest parent element that is relatively positioned to provide the coordinate system for their position. 
+
+What is a coordinate system? That means how the CSS values of top, left, right, and bottom will affect the element. 
+
+For relatively positioned elements, the element is positioned to the normal document object flow. With fixed elements the element is positioned to the screen itself.
+
+With absolutely positioned elements the element is positioned as a x, y coordinate in relation to the nearest parent element that is relatively positioned.
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/pattee/embed/JjrOBLm?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/pattee/pen/JjrOBLm">
+  Untitled</a> by Pattee Green (<a href="https://codepen.io/pattee">@pattee</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+## Inherit
+
+The inherit CSS style causes the element to take on the calculated position value of it's parent element. The inherit value can be applied to any CSS key value and not just the position property.
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="CSS Demo: Absolutely positioned element" src="https://codepen.io/pattee/embed/VwMrBdN?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/pattee/pen/VwMrBdN">
+  CSS Demo: Absolutely positioned element</a> by Pattee Green (<a href="https://codepen.io/pattee">@pattee</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
