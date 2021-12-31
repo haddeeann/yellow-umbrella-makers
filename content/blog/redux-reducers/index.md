@@ -1,21 +1,40 @@
 ---
-title: What Are Redux Reducers?
-date: '2021-12-23'
+title: Basic Architecture of Redux
+date: '2021-12-31'
 ---
-There seems to be some confusion around Reducers in Redux. When developers are first learning Redux it seems like magic. But after diving in and learning, you'll discover that Redux is simply good programming practices that are enforced through rules and programming restraints.
+## Introduction
+Some of the main topics in Redux are actions, reducers, the store, and state. What are each of these things separately and how do they interact?
 
-Let's start with what reducers are in general. In JavaScript there is a built in language implementation, the Array.prototype.reducer function. The reducer function takes in an array of values, performs the function that is passed into it as an argument and returns a single value. Reducers take in an array of values and produce a single result, thus 'reducing' the array to a single value.
+## State
+State can be thought of as the data that is in the application at any one moment in time. It's the data of the application and the current condition of the application. State of the application can also be thought of as the word for condition of the application. It's the same kind of meaning that could be said about any object. A person could say that the state of their car was dirty. Or clean.
 
-What does that have to do with Redux reducers? Well, some people seem to think that the Redux library is taking the values and some place in the background is performing some kind of reducing logic. 
+That is what state means as a concept. But what is state when it comes to Redux? With Redux, an object is made and all the information that needs to be stored in a session is put into that object. It's the state object. When a web component needs to be made the initial value of the state is set up. And whenever state is updated, it's always done through a special 'useState' method.
 
-I can understand the temptation to think that. What Redux actually does under the hood is mysterious when you first begin using the library. But no. Redux isn't doing any reducing magic in the library itself. 
+The reason state is ONLY updated with special methods in Redux is because whenever Redux updates the state object, under the hood it's actually creating a new state object and returning. Redux never directly updates the state object. With every change it makes a new object with the old state and the changes needed into a new object.
 
-Reducers are called that because the programming is writing a function that performs that same time of role that the built in Array.prototype.reducer function does in the JavaScript library. In the JavaScript library, reducers take in an array of values and produce a single output based on the function created by the programmer and passed into the reducer.
+This allows something called time travel with Redux. This process simply uses existing Redux dev tools to be able to cycle through all the previous state objects.
 
-In Redux, reducers take in two objects and process the objects according to the logic written by the programmer. The reducer then returns a SINGLE VALUE. See, two objects get passed in, one object gets returned. The reducer in Redux is behaving like a built in reducer in JavaScript.
+## Actions
+Actions are an object that contain key values that describe the actions and events that take place in the application. Whenver something happens in an application that needs to modify the state of the application then an action object is created. That action object should contain two keys: payload and type. The type key should contain a string that describes the type of action that just occurred. 
 
-In Redux the two objects passed in are the state object and the action object. The state object is the state of the application in a plain JavaScript object form. And the action object is a plain JavaScript object where there is a type key and a payload key. The type key represents the type of action or event that took place in th application. And the payload represents the value of interest that the application needs to act on. That could be something that needs to added, updated, or deleted. 
+The payload value should contain the 'data of interest'. Data of interest is any data that needs to be changed in some way. Often when the state of an application needs to be changed then a type of C.R.U.D. activity needs to take place. The payload will contain any of the data for the transaction.
 
-The reducer in Redux then returns a brand new object that represents the state after any modifications needed to the previous state. Keep in mind, that with proper state management that the previous state is NEVER modified directly. Instead a new object is created based on the logic of how the previous state needs to change.
+When an action is created, it's then 'dispatched'. That means that it is sent to the store.
 
-That brand new object is returned as the single value that a reducer returns.
+## Store
+The store is a function that acts as a repository for the state of the application. It's a central location where the data can be retrieved from. If the application needs to update or retrieve state, then it will fetch it from the store or send the store an action that will be used to update the overall data of the application.
+
+Each time an action is dispatched, it receives the state and actions objects as parameters. The store then acts as a director to send the actions and objects to the correct reducer. The logic that determines which reducers is used is directed by the developer and based on the type key value pair in the action object.
+
+## Reducer
+The reduce method in VanillaJS is a built function on the Array object. It's a method performed on arrays that take a function in as an argument. The functions job is to take the many values in the array and reduce it to one value that gets returned. The function that gets passed into the reduce method is a reducer.
+
+A reducer takes many values and 'reduces' it to a single value.
+
+That is where Redux reducers get their name. Reducers perform a similar function. The reducers job in Redux is to receive an action object and a state object. And according the the functions within the reducer return a new modified version of the state object.
+
+The reducer uses the type of action on the type key value pair to determine how to process the data. It then uses the data received on the action payload and the data on the state object and creates a new state and returns the new state to the store.
+
+## Conclusion
+And that describes the process that the data flows through in a Redux application. Examining it that way, each of the major pieces that make up a Redux application can be broke down to it's simplest role.
+
