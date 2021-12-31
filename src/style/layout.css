@@ -4,19 +4,30 @@
  /* #B3A081 */
  /*  */
  /* #FFE9C4 */
- .page-header {
+ .layout {
+     position: relative;
+ }
+ .header-wrapper {
+     height: 175px;
+     background-color: rgb(209, 241, 255);
+     z-index: 2;
+     padding: 20px;
+ }
+ .home-header-wrapper {
+    height: 80vh;
+    background-color: rgb(209, 241, 255);
+    position: relative;
+    z-index: 2;
     padding: 20px;
-    font-family: helvetica neue, helvetica, arial, sans-serif;
-    height: 75vh;
 }
-.short-header {
-    height: 150px;
-    background-color: rgba(209, 241, 255, 0.5);
-    opacity: 0.75;
+.nav-section {
+    z-index: 3;
+    position: absolute;
+    top: 0;
 }
 nav ul li {
     display: inline-block;
-    padding-right: 15px;
+    padding: 0 15px;
 }
 .page-header a, .page-header a:hover, header a, header a:hover {
     text-decoration: none;
@@ -29,12 +40,14 @@ nav ul li {
 }
 
 .clouds {
-    height: 75vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('../images/clouds.jpg');
-    background-image: linear-gradient(to bottom, rgba(209, 241, 255, 1) 35%, rgba(209, 241, 255, .65) 55%, rgba(255,255,255,.35) 75%, rgba(247, 247, 247, 1)), url('../images/clouds.jpg');
-    opacity: 0.75;
     background-size: cover;
-    background-position: left 75%;
+    background-position: bottom left; 
 }
 
 main {
