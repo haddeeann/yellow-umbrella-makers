@@ -41,6 +41,20 @@ const TinyProjects = ({ data, location }) => {
                         />
                     </a>
                 </li>
+                <hr />
+                <li>
+                    <a href='https://thearts.netlify.app/' target='_blank' rel='noreferrer'>
+                        <h3>Llama Arts</h3>
+                        <StaticImage 
+                            layout='fixed'
+                            formats={['auto', 'jpeg']}
+                            src='../images/llama-arts.jpeg'
+                            width={500}
+                            quality={95}
+                            alt='The Llama Arts'
+                        />
+                    </a>
+                </li>
             </ul>
         </Layout>
     );
