@@ -1,7 +1,7 @@
 {
-  "name": "YummyApps",
+  "name": "yummyapps",
   "private": true,
-  "description": "Blog powered by Gatsby and Markdown",
+  "description": "A MicroProject Website",
   "version": "0.1.0",
   "author": "Patricia Green <pattee13@gmail.com>",
   "bugs": {

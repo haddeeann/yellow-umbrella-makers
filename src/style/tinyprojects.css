@@ -1,0 +1,13 @@
+.tiny-projects {
+    list-style-type: none;
+}
+
+.tiny-projects li {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #66d9ff;
+}
